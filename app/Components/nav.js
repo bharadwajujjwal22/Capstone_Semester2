@@ -66,7 +66,7 @@ export default function Nav() {
       </div>
 
       {showLogoutModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-opacity-10 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-10 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
             <h2 className="text-lg font-semibold mb-4">Are you sure you want to log out?</h2>
             <div className="flex justify-between">
