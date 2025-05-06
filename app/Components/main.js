@@ -5,8 +5,9 @@ export default function Main() {
     <div className="w-full h-auto">
       <video autoPlay muted loop playsInline className="w-full h-auto">
         <source src="/assets/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        Your browser does not support the video tag :(
       </video>
+      <img></img>
     </div>
   );
 }
