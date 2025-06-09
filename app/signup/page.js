@@ -5,15 +5,16 @@ import { useRouter } from "next/navigation";
 export default function SignUp() {
   const router = useRouter();
 
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    
 
     const existingUser = localStorage.getItem(email);
     if (existingUser) {
@@ -22,16 +23,21 @@ export default function SignUp() {
       return;
     }
 
+    const userDetails = {
+      name,
+      phone,
+      email,
+      password,
+    };
 
-    const userDetails = { email, password };
     localStorage.setItem(email, JSON.stringify(userDetails));
 
-
+    setName("");
+    setPhone("");
     setEmail("");
     setPassword("");
     setError("");
     setSuccess("Account created successfully! Please log in.");
-
 
     setTimeout(() => {
       router.push("/login");
@@ -48,6 +54,32 @@ export default function SignUp() {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
+            <label htmlFor="name" className="block text-sm font-medium">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              className="w-full px-4 py-2 border rounded-md"
+              placeholder="Enter your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="phone" className="block text-sm font-medium">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              className="w-full px-4 py-2 border rounded-md"
+              placeholder="Enter your phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium">Email</label>
             <input
               type="email"
@@ -56,6 +88,7 @@ export default function SignUp() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
@@ -68,6 +101,7 @@ export default function SignUp() {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
 

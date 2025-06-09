@@ -1,32 +1,32 @@
 'use client';
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
-  
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
 
     const userDetails = localStorage.getItem(email);
-    
+
     if (!userDetails) {
       setError("User does not exist.");
       return;
     }
 
-    const { password: storedPassword } = JSON.parse(userDetails);
-
+    const parsedDetails = JSON.parse(userDetails);
+    const { password: storedPassword } = parsedDetails;
 
     if (storedPassword === password) {
       setError("");
 
       localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("loggedInUser", JSON.stringify(parsedDetails)); // ✅ Save full user
 
       router.push("/");
     } else {
@@ -38,7 +38,7 @@ export default function Login() {
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
       <div className="w-full max-w-sm bg-white p-8 shadow-lg rounded-lg">
         <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
-        
+
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
         <form onSubmit={handleSubmit}>
@@ -51,6 +51,7 @@ export default function Login() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
@@ -63,6 +64,7 @@ export default function Login() {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
 
