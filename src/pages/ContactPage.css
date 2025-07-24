@@ -18,7 +18,7 @@
 
 .contact-container h1 {
   margin-bottom: 1.5rem;
-  color: #e53935;
+  color: rgb(88, 80, 80);
   font-size: 2rem;
   font-weight: 700;
 }
@@ -55,7 +55,7 @@
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 12px 0;
+  padding: 12px 30px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
