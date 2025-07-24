@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 import './ProductCard.css';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useEffect } from 'react';
@@ -17,26 +18,25 @@ const ProductCard = ({ product, onRequireLogin }) => {
     return () => unsubscribe();
   }, []);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.preventDefault(); // Prevent Link navigation when clicking Add to Cart
     if (!user) {
       alert('Please log in to add to cart');
       return;
     }
     setIsAdding(true);
     addToCart(product);
-    
-    // Reset animation after it completes
     setTimeout(() => {
       setIsAdding(false);
     }, 1000);
   };
-  
+
   const formatPrice = (price) => {
     return (price * 83).toFixed(2);
   };
-  
+
   return (
-    <>
+    <Link to={`/product/${product.id}`} className="product-card-link">
       <div className="product-card">
         <div className="product-image-container">
           <img 
@@ -51,7 +51,6 @@ const ProductCard = ({ product, onRequireLogin }) => {
             </span>
           )}
         </div>
-        
         <div className="product-info">
           <h3 className="product-name">{product.title}</h3>
           <div className="product-rating">
@@ -72,7 +71,7 @@ const ProductCard = ({ product, onRequireLogin }) => {
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 

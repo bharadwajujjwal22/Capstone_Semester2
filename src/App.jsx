@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
 import CollectionsPage from './pages/CollectionsPage';
 import ContactPage from './pages/ContactPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 import { useCart } from './context/CartContext';
 import './styles/App.css';
 
@@ -58,6 +59,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/collections" element={<CollectionsPage onRequireLogin={setGlobalLoginMsg} />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/product/:id" element={<ProductDetailsPage />} />
         </Routes>
       </main>
       <Footer />
