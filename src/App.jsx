@@ -9,6 +9,7 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage/OrderConfirmati
 import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
 import CollectionsPage from './pages/CollectionsPage';
+import ContactPage from './pages/ContactPage';
 import { useCart } from './context/CartContext';
 import './styles/App.css';
 
@@ -56,6 +57,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/collections" element={<CollectionsPage onRequireLogin={setGlobalLoginMsg} />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />

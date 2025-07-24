@@ -1,28 +1,213 @@
-.about-page {
-  min-height: 60vh;
+.about-page.white-bg {
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 40px 0;
+}
+
+.about-title-section {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
+.about-title-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.highlight-red {
+  color: #e53935;
+  font-weight: 600;
+}
+
+.about-mission-vision-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: #f5f5f5;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 28px 32px;
+  min-width: 260px;
+  max-width: 350px;
+  flex: 1 1 260px;
+}
+
+.about-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.about-card p {
+  color: #333;
+  font-size: 1rem;
+}
+
+.about-offer-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.about-offer-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.about-offer-section ul {
+  list-style: disc inside;
+  color: #222;
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.about-offer-section li {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.about-team-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.about-team-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.about-team-section p {
+  color: #444;
+  font-size: 1rem;
+}
+
+.about-journey-section {
+  background: #f5f5f5;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 28px 32px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.about-journey-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.about-journey-section p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.contact-btn {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-btn:hover {
+  background: #b71c1c;
+}
+
+.contact-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f9f9f9;
+  z-index: 1000;
 }
 
-.about-container {
+.contact-modal {
   background: #fff;
-  padding: 2rem 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-  max-width: 600px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+  padding: 32px 28px 24px 28px;
+  min-width: 320px;
+  max-width: 90vw;
   width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+.contact-modal h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  font-weight: 600;
   text-align: center;
 }
 
-.about-container h1 {
-  margin-bottom: 1rem;
-  color: #007AFF;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.about-container p {
+.contact-form label {
+  font-size: 1rem;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.contact-form input:focus {
+  border: 1.5px solid #e53935;
+}
+
+.contact-form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.contact-cancel-btn {
+  background: #eee;
   color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-cancel-btn:hover {
+  background: #ccc;
 } 
