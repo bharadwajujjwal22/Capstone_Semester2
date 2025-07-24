@@ -14,7 +14,7 @@ const CartItem = ({ item }) => {
   
   const handleRemove = () => {
     setIsRemoving(true);
-    // Delay actual removal to allow animation to complete
+
     setTimeout(() => {
       removeFromCart(item.id);
     }, 300);

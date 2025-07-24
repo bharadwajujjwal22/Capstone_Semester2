@@ -10,10 +10,9 @@ const CartPage = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    // Enable checkout button if cart has items
     setIsCheckoutDisabled(cartItems.length === 0);
     
-    // Scroll to top on component mount
+
     window.scrollTo(0, 0);
   }, [cartItems]);
   
