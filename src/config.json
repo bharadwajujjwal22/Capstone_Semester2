@@ -1,0 +1,11 @@
+{
+  "template": "vite-react",
+  "firebaseConfig": {
+    "apiKey": "AIzaSyAQW9fMincu2Ofs1IzXKjQF6L06GxzwA9E",
+    "authDomain": "YOUR_AUTH_DOMAIN",
+    "projectId": "e-commerce-d4e1b",
+    "storageBucket": "YOUR_STORAGE_BUCKET",
+    "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
+    "appId": "YOUR_APP_ID"
+  }
+}
